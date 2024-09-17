@@ -1,0 +1,22 @@
+{
+    "name": "datahihi1/datahihi1-core",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Router\\": "router/",
+            "Error\\": "err/"
+        }
+    },
+    "authors": [
+        {
+            "name": "datahihi1",
+            "email": "datahihi1100@gmail.com"
+        }
+    ],
+    "require": {
+        "eftec/bladeone": "^4.13",
+        "phroute/phroute": "^2.2",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

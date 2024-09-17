@@ -1,0 +1,12 @@
+RewriteEngine On
+Options -Indexes
+
+# RewriteBase /datahihi1-lite/public/
+ErrorDocument 403 /datahihi1-lite/public/errordocs/403.php
+
+# Security: Check for PHP file extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?u=$1 [QSA,L]
