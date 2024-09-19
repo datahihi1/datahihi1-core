@@ -1,0 +1,21 @@
+/* Tùy chỉnh thanh cuộn */
+::-webkit-scrollbar {
+  width: 7px; /* Độ rộng của thanh trượt */
+}
+
+/* Tùy chỉnh phần thanh cuộn (track) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền track */
+  border-radius: 10px; /* Bo góc */
+}
+
+/* Tùy chỉnh phần kéo thả (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2; /* Màu của thumb */
+  border-radius: 10px; /* Bo góc */
+}
+
+/* Thay đổi màu khi di chuột vào thumb */
+::-webkit-scrollbar-thumb:active {
+  background: #b84343;
+}
