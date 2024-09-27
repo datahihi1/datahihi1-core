@@ -16,12 +16,12 @@
               <img src="{{BASE_URL.'public/adminLogin.svg'}}" class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-              <?php if (session('login_error')): ?>
+              <?php if (session('login_notify')): ?>
               <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <?= session('login_error'); ?>
+                  <?= session('login_notify'); ?>
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
-              <?php session('login_error', 'unset'); ?>
+              <?php session('login_notify', 'unset'); ?>
             <?php endif; ?>
               <form action="{{route('admin/login/check')}}" method="POST">
                 

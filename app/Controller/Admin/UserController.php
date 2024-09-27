@@ -10,7 +10,7 @@ class UserController extends Controller
     private $userModel;
     public function __construct() {
         if (!isset($_SESSION['id'])) {
-            $_SESSION['login_error'] = "Yêu cầu đăng nhập!";
+            $_SESSION['login_notify'] = "Yêu cầu đăng nhập!";
             header('location:' . BASE_URL . '?u=admin/login');
             exit();
         }

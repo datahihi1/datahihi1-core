@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         if (!isset($_SESSION['id'])) {
-            $_SESSION['login_error'] = "Yêu cầu đăng nhập!";
+            $_SESSION['login_notify'] = "Yêu cầu đăng nhập!";
             header('location:' . BASE_URL . '?u=admin/login');
             exit();
         }
@@ -31,21 +31,21 @@ class AdminController extends Controller
         $pass = post('password') ?? null;
     
         if (!$username || !$email || !$pass) {
-            $_SESSION['login_error'] = "Vui lòng nhập tất cả các trường!";
+            $_SESSION['login_notify'] = "Vui lòng nhập tất cả các trường!";
             header('location:' . BASE_URL . '?u=admin/login');
             exit();
         }
     
         $adminUser = $this->userModel->getLoginAdmin($username, $email);
         if (!$adminUser) {
-            $_SESSION['login_error'] = "Không tìm thấy tài khoản!";
+            $_SESSION['login_notify'] = "Không tìm thấy tài khoản!";
             header('location:' . BASE_URL . '?u=admin/login');
             exit();
         }
     
         $passAdmin = $this->userModel->getPassAdminLogin($username, $email);
         if (!password_verify($pass, $passAdmin->pass_hash)) {
-            $_SESSION['login_error'] = "Sai mật khẩu!";
+            $_SESSION['login_notify'] = "Sai mật khẩu!";
             header('location:' . BASE_URL . '?u=admin/login');
             exit();
         }
@@ -53,7 +53,7 @@ class AdminController extends Controller
         $_SESSION['id'] = $adminUser->id;
         $_SESSION['username'] = $adminUser->username;
         $_SESSION['avatar'] = $adminUser->avatar;
-        $_SESSION['login_error'] = "Đăng nhập thành công!";
+        $_SESSION['login_notify'] = "Đăng nhập thành công!";
         header('location:' . BASE_URL . '?u=admin');
         exit();
     }    
