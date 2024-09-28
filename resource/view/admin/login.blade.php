@@ -44,12 +44,15 @@
                   <label class="form-label" for="passwordShow">Mật khẩu</label>
                   <div class="input-group">
                     <input type="password" id="passwordShow" class="form-control form-control-lg" name="password" />
-                    <span class="input-group-text" onclick="togglePassword()">
-                      <i class="fa fa-eye" id="toggleIcon"></i>
-                    </span>
                   </div>
                 </div>
-              
+
+                <div data-mdb-input-init class="form-outline mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" onclick="togglePassword()">
+                    <label class="form-check-label" for="flexCheckIndeterminate">Hiện mật khẩu</label>
+                  </div>
+                </div>
                 <!-- Submit button -->
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-block">Đăng nhập</button>
       
@@ -69,21 +72,15 @@
       </section>
 </body>
 @include('admin.assets.script')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 </html>
 <script>
   function togglePassword() {
     var passwordField = document.getElementById("passwordShow");
-    var icon = document.getElementById("toggleIcon");
     
     if (passwordField.type === "password") {
       passwordField.type = "text";
-      icon.classList.remove("fa-eye");
-      icon.classList.add("fa-eye-slash");
     } else {
       passwordField.type = "password";
-      icon.classList.remove("fa-eye-slash");
-      icon.classList.add("fa-eye");
     }
   }
 </script>
