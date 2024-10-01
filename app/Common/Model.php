@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Common;
 
 use PDO;
 use PDOException;
-use PDOStatement;
 class Model
 {
     public $pdo;

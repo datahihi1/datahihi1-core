@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Common;
 
 use eftec\bladeone\BladeOne;

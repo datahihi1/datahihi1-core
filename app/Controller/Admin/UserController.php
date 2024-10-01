@@ -83,7 +83,7 @@ class UserController extends Controller
         $u = $this->userModel->getUserByID($id);
         $avatar = $u->avatar;
         if ($image['name'] != '') {
-            if ($u->avatar) {
+            if ($u->avatar && file_exists($u->avatar)) {
                 unlink($u->avatar);
             }
             $p = rand(0, 100000) . '_' . $image['name'];
